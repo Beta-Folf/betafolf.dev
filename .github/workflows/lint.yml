@@ -1,0 +1,28 @@
+name: Lint and Test
+on: [workflow_dispatch, push]
+
+jobs:
+  lint-and-test:
+    name: Lint and test pushed commit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+
+      - name: Use yarn cache keyed by hashed yarn.lock
+        uses: actions/cache@v2
+        with:
+          path: ~/.yarn
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Check code formatting with prettier
+        run: yarn run prettier:check
