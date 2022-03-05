@@ -18,6 +18,8 @@ type CustomAppProps<T> = AppProps<T> & {
 
 const WEBSITE_DESCRIPTION =
   "OwO what's this. I'm a gay furry full stack web developer. I clearly make great life choices.";
+const WEBSITE_URL = 'https://www.betafolf.dev/';
+const REFSHEET_URL = 'https://www.betafolf.dev/refsheets/shaded_sfw.png';
 
 function MyApp({ Component, pageProps }: CustomAppProps<PageProps>) {
   return (
@@ -26,14 +28,18 @@ function MyApp({ Component, pageProps }: CustomAppProps<PageProps>) {
         <title>{pageProps.title}</title>
         <meta name="author" content="Beta Folf" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content={WEBSITE_DESCRIPTION} />
         <meta name="keywords" content="beta, folf, furry, gay, owo" />
         <meta name="theme-color" content={COLORS.BLACK} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://betafolf.dev" />
+        <meta property="og:url" content={WEBSITE_URL} />
         <meta property="og:title" content="Beta Folf" />
         <meta property="og:description" content={WEBSITE_DESCRIPTION} />
-        <meta property="og:image" content="https://www.betafolf.dev/refsheets/shaded_sfw.png" />
+        <meta property="og:image" content={REFSHEET_URL} />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={WEBSITE_URL} />
+        <meta property="twitter:title" content="Beta Folf" />
+        <meta property="twitter:description" content={WEBSITE_DESCRIPTION} />
+        <meta property="twitter:image" content={REFSHEET_URL} />
       </Head>
       <ChakraProvider theme={theme}>
         <Component {...pageProps} />
