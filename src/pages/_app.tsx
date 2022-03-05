@@ -28,6 +28,9 @@ function MyApp({ Component, pageProps }: CustomAppProps<PageProps>) {
         />
         <meta name="keywords" content="beta, folf, furry, gay, owo" />
         <meta name="theme-color" content="#4379c0" />
+        <meta property="og:title" content="Beta Folf" />
+        <meta property="og:image" content="/refsheets/shaded_sfw.png" />
+        <meta property="og:url" content="https://betafolf.dev" />
       </Head>
       <ChakraProvider theme={theme}>
         <Component {...pageProps} />
