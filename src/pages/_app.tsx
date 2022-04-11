@@ -29,7 +29,7 @@ function MyApp({ Component, pageProps }: CustomAppProps<PageProps>) {
         <meta name="author" content="Beta Folf" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="keywords" content="beta, folf, furry, gay, owo" />
-        <meta name="theme-color" content={Colors.BLUE} />
+        <meta name="theme-color" content={Colors.BETA_BLUE} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={WEBSITE_URL} />
         <meta property="og:title" content="Beta Folf" />
