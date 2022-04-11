@@ -13,6 +13,7 @@ export default function RefsheetImage({ image, title, onImageError, onClick }: R
   return (
     <Image
       src={image.src}
+      alt="Refsheet"
       maxHeight="100%"
       maxWidth="100%"
       height="auto"

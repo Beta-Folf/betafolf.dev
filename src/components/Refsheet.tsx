@@ -11,7 +11,7 @@ const NSFW_REF_SHEET_URI = '/refsheets/compressed_nsfw.png';
 const SFW_REF_SHEET_URI = '/refsheets/compressed_sfw.png';
 const VALLHOUND_URL = 'https://vallhound.weebly.com/';
 
-export default forwardRef<HTMLDivElement>((props, ref) => {
+const Refsheet = forwardRef<HTMLDivElement>((props, ref) => {
   const isMobile = useIsMobile();
 
   const [nsfwRefSheetVisible, setNsfwRefSheetVisible] = useState(false);
@@ -63,3 +63,7 @@ export default forwardRef<HTMLDivElement>((props, ref) => {
     </>
   );
 });
+
+Refsheet.displayName = 'Refsheet';
+
+export default Refsheet;
