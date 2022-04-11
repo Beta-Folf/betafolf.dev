@@ -1,19 +1,19 @@
 import { extendTheme } from '@chakra-ui/react';
 
-import { COLORS } from './colors';
+import { Colors } from './colors';
 
 export const theme = extendTheme({
   colors: {
     brand: {
-      100: COLORS.BLUE,
-      200: COLORS.BLUE,
-      300: COLORS.BLUE,
-      400: COLORS.BLUE,
-      500: COLORS.BLUE,
-      600: COLORS.BLUE,
-      700: COLORS.BLUE,
-      800: COLORS.BLUE,
-      900: COLORS.BLUE,
+      100: Colors.BETA_BLUE,
+      200: Colors.BETA_BLUE,
+      300: Colors.BETA_BLUE,
+      400: Colors.BETA_BLUE,
+      500: Colors.BETA_BLUE,
+      600: Colors.BETA_BLUE,
+      700: Colors.BETA_BLUE,
+      800: Colors.BETA_BLUE,
+      900: Colors.BETA_BLUE,
     },
   },
   styles: {

@@ -1,6 +1,6 @@
-export enum COLORS {
+export enum Colors {
   WHITE = '#fefffe',
-  BLUE = '#4379c0',
+  BETA_BLUE = '#4379C2',
   GREEN = '#32a697',
   GRAY = '#b0b0b0',
   BLACK = '#292829',
