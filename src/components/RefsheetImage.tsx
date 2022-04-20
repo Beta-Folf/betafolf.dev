@@ -1,15 +1,15 @@
-import { Image } from '@chakra-ui/react';
+import { useState } from 'react';
+import { Image, Skeleton } from '@chakra-ui/react';
 
 import { Colors } from '~/constants/colors';
 
 interface RefsheetImageProps {
   image: StaticImageData;
-  title: string;
+  imageUri: string;
   onImageError(): void;
-  onClick(): void;
 }
 
-export default function RefsheetImage({ image, title, onImageError, onClick }: RefsheetImageProps) {
+export default function RefsheetImage({ image, imageUri, onImageError }: RefsheetImageProps) {
   return (
     <Image
       src={image.src}
@@ -21,9 +21,10 @@ export default function RefsheetImage({ image, title, onImageError, onClick }: R
       borderColor={Colors.BETA_BLUE}
       borderStyle="solid"
       cursor="pointer"
-      title={title}
+      title="View Ref Sheet"
       onError={onImageError}
-      onClick={onClick}
+      onClick={() => window.open(`${window.location.origin}${imageUri}`, '_blank')}
+      fallback={<Skeleton width="96" height="48" />}
     />
   );
 }

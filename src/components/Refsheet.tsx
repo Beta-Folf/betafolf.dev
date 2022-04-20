@@ -17,9 +17,6 @@ const Refsheet = forwardRef<HTMLDivElement>((props, ref) => {
   const [nsfwRefSheetVisible, setNsfwRefSheetVisible] = useState(false);
   const [imageError, setImageError] = useState(false);
 
-  const visibleRefSheet = nsfwRefSheetVisible ? shadedNSFWRefSheet : shadedSFWRefSheet;
-  const refSheetUrl = nsfwRefSheetVisible ? NSFW_REF_SHEET_URI : SFW_REF_SHEET_URI;
-
   return (
     <>
       <div ref={ref} />
@@ -33,14 +30,23 @@ const Refsheet = forwardRef<HTMLDivElement>((props, ref) => {
               My Ref Sheet!
             </Text>
             {/* Image */}
-            <Box height={isMobile ? 'auto' : '65%'}>
-              <RefsheetImage
-                image={visibleRefSheet}
-                title="View Ref Sheet"
-                onImageError={() => setImageError(true)}
-                onClick={() => window.open(`${window.location.origin}/${refSheetUrl}`, '_blank')}
-              />
-            </Box>
+            <Flex height={isMobile ? 'auto' : '65%'} justifyContent="center" alignItems="center">
+              {nsfwRefSheetVisible ? (
+                <RefsheetImage
+                  key="nsfw"
+                  image={shadedNSFWRefSheet}
+                  imageUri={NSFW_REF_SHEET_URI}
+                  onImageError={() => setImageError(true)}
+                />
+              ) : (
+                <RefsheetImage
+                  key="sfw"
+                  image={shadedSFWRefSheet}
+                  imageUri={SFW_REF_SHEET_URI}
+                  onImageError={() => setImageError(true)}
+                />
+              )}
+            </Flex>
             {/* Click note */}
             <Text fontSize="sm" py="2" color="gray.600">
               (Click image to view full screen version)
